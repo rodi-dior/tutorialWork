@@ -2,6 +2,7 @@ package uk.ac.westminster.tutorialWork;
 
 public class Product {
 
+    public static int counter = 0;
     private Long id;
     private String name;
     private double price;
@@ -12,6 +13,7 @@ public class Product {
         this.id = id;
         this.name = name;
         this.price = price;
+        counter++;
     }
 
     public Long getId(){return id;}
