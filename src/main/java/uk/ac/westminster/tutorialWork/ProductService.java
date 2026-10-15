@@ -22,8 +22,9 @@ public class ProductService {
     }
 
     public Product addProduct(Product p){
-        products.add(p);
+        p.setId(nextId++);
         nextId++;
+        products.add(p);
         return p;
     }
 
