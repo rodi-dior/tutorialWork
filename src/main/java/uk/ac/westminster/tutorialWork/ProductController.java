@@ -27,7 +27,7 @@ public class ProductController {
     public Product getName(@RequestParam String name){return productService.getProductById(name).orElse(null);}
 
     @PostMapping("products")
-    public Product addProduct(@RequestBody Product p){
+    public List<Product> addProduct(@RequestBody Product p){
         return productService.addProduct(p);
     }
 

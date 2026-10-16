@@ -21,22 +21,24 @@ public class ProductService {
         return products.stream().filter(p -> p.getId().equals(id)).findFirst();
     }
 
-    public Product addProduct(Product p){
+    public List<Product> addProduct(Product p){
         p.setId(nextId++);
-        nextId++;
         products.add(p);
-        return p;
+        return products;
     }
 
     public void deleteProduct(Long id){
         products.removeIf(product -> product.getId().equals(id));
     }
 
-
     public Optional<Product> getProductById(String name){
         return products.stream().filter(p -> p.getName().equals(name)).findFirst();
     }
 
+//    public ProductService(){
+//        products.add(new DigitalProduct(nextId++,"Youtube", 19.99, "youtube.com", 50));
+//        products.add(new PhysicalProduct(nextId++, "Table", 299.99, 50, "3d"));
+//    }
 
 
 
